@@ -111,7 +111,7 @@ async def on_message(message):
 @bot.command(pass_context=True)
 async def DM(ctx, user: discord.User, *, message=None):
     message = message or "This Message is sent via DM"
-    await bot.send_message(user, message)
+    await bot.send(user, message)
 
 
 
