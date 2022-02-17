@@ -87,6 +87,9 @@ async def on_message(message):
         if not isClean:
             await message.channel.send(punish_user(author_id))
 
+    if message.content.startswith("$DM_Test"):
+        await client.send_message(message.author, "Bil is Mabie\'s Uncle")
+
     keyword = ["kronk", "duffy"]
     comebacks = [
         'DO NOT MENTION THAT FORBIDDEN NAME!!!',
