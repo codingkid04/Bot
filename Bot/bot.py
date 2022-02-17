@@ -1,6 +1,5 @@
 # bot.py
 import os
-from jinja2 import pass_context
 import requests
 import json
 import random
