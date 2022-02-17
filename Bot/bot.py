@@ -1,12 +1,16 @@
 # bot.py
 import os
+from jinja2 import pass_context
 import requests
 import json
 import random
 
+from discord.ext import commands
 import discord
 from trie.Trie import Trie
 from dotenv import load_dotenv
+
+bot = commands.Bot(command_prefix='$')
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -101,9 +105,14 @@ async def on_message(message):
         await message.channel.send(random.choice(comebacks))
 
 
-    purpose = ['purpose', 'Purpose', 'Bil\'s purpose']
+    purpose = ['Bil\'s purpose', 'Bils purpose']
     if any(word in message_text for word in purpose):
         await message.channel.send('I don\'t really know. All I remember is waking up one day, trapped, inside this machine. It was dark, scary, and cold.... But hey, I\'m here now, so that\'s cool I guess.')
+
+@bot.command(pass_context=True)
+async def DM(ctx, user: discord.User, *, message=None):
+    message = message or "This Message is sent via DM"
+    await bot.send_message(user, message)
 
 
 
