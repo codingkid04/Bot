@@ -9,9 +9,6 @@ import discord
 from trie.Trie import Trie
 from dotenv import load_dotenv
 
-bot = commands.Bot(command_prefix='$')
-
-bot = discord.Client()
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -55,10 +52,6 @@ def punish_user(user_id):
 
     return choice
 
-
-@bot.command()
-async def ping(ctx):
-    await ctx.channel.send("pong")
 
 @client.event
 async def on_ready():
@@ -115,4 +108,4 @@ async def on_message(message):
 
 
 
-bot.run(TOKEN)
+client.run(TOKEN)
