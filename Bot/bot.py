@@ -55,7 +55,7 @@ def punish_user(user_id):
 
     return choice
 
-@client.command()
+@bot.command()
 async def ping(ctx):
     await ctx.send('Pong!')
 
