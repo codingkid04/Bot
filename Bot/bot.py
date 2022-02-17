@@ -100,6 +100,9 @@ async def on_message(message):
     if any(word in message_text for word in keyword):
         await message.channel.send(random.choice(comebacks))
 
+    if message.content.startswith("$DM"):
+        await client.send(message.author, "Bil is Mabie\'s Uncle")
+
 
     purpose = ['Bil\'s purpose', 'Bils purpose']
     if any(word in message_text for word in purpose):
