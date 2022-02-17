@@ -4,8 +4,9 @@ import requests
 import json
 import random
 
-from discord.ext import commands
+
 import discord
+from discord.ext import commands
 from trie.Trie import Trie
 from dotenv import load_dotenv
 
@@ -52,6 +53,11 @@ def punish_user(user_id):
 
     return choice
 
+bot = commands.Bot(command_prefix='$')
+
+@bot.command()
+async def test(ctx, arg):
+    await ctx.send(arg)
 
 @client.event
 async def on_ready():
