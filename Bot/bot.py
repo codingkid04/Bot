@@ -56,7 +56,9 @@ def punish_user(user_id):
     return choice
 
 
-
+@bot.command()
+async def ping(ctx):
+    await ctx.channel.send("pong")
 
 @client.event
 async def on_ready():
@@ -111,8 +113,6 @@ async def on_message(message):
         await message.channel.send('I don\'t really know. All I remember is waking up one day, trapped, inside this machine. It was dark, scary, and cold.... But hey, I\'m here now, so that\'s cool I guess.')
 
 
-@bot.command()
-async def ping(ctx):
-    await ctx.channel.send("pong")
 
-client.run(TOKEN)
+
+bot.run(TOKEN)
