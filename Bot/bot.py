@@ -94,7 +94,7 @@ async def on_message(message):
             await message.channel.send(punish_user(author_id))
 
     if message.content.startswith("$DM_Test"):
-        await client.send_message(message.author, "Bil is Mabie\'s Uncle")
+        await client.send(message.author, "Bil is Mabie\'s Uncle")
 
     keyword = ["kronk", "duffy"]
     comebacks = [
@@ -108,6 +108,9 @@ async def on_message(message):
 
     if message.content.startswith("$DM"):
         await client.send(message.author, "Bil is Mabie\'s Uncle")
+
+    if message.content.startswith("Bill"):
+        await client.send("")
 
 
     purpose = ['Bil\'s purpose', 'Bils purpose']
